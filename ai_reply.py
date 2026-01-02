@@ -12,7 +12,8 @@ class AIReplyGenerator:
             raise ValueError("Gemini API key required. Set GEMINI_API_KEY env variable or pass api_key parameter")
         
         genai.configure(api_key=self.api_key)
-        self.model = genai.GenerativeModel('gemini-pro')
+        # Use the latest Gemini model
+        self.model = genai.GenerativeModel('gemini-flash-latest')
         
         # Customize this prompt to match your personality
         self.system_prompt = """You are responding as a League of Legends player who is currently busy but wants to stay friendly with friends.
